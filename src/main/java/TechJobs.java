@@ -70,18 +70,18 @@ public class TechJobs {
         }
     }
 
-    // ﻿Returns the key of the selected item from the choices Dictionary
+    // Returns the key of the selected item from the choices Dictionary
     private static String getUserSelection(String menuHeader, HashMap<String, String> choices) {
 
         int choiceIdx = -1;
         Boolean validChoice = false;
         String[] choiceKeys = new String[choices.size()];
 
-        // Put the choices in an ordered structure so we can
+        // Put the choices in an ordered structure, so we can
         // associate an integer with each one
         int i = 0;
         for (String choiceKey : choices.keySet()) {
-            choiceKeys[i] = choiceKey;
+            choiceKeys[i] = choiceKey;                  //choiceKeys[keys]
             i++;
         }
 
@@ -91,7 +91,7 @@ public class TechJobs {
 
             // Print available choices
             for (int j = 0; j < choiceKeys.length; j++) {
-                System.out.println("" + j + " - " + choices.get(choiceKeys[j]));
+                System.out.println("" + j + " - " + choices.get(choiceKeys[j])); //values for keys
             }
 
             if (in.hasNextInt()) {
@@ -119,7 +119,19 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-
-        System.out.println("printJobs is not implemented yet");
+        if (someJobs.isEmpty()) {
+            System.out.print("No Results");
+            return;
+        } else {
+            for (HashMap<String, String> jobResult : someJobs) {
+               // System.out.println("");
+                System.out.println("\n*****");
+                for (Map.Entry<String, String> jobData : jobResult.entrySet()) {
+                    System.out.println(jobData.getKey() + ": " + jobData.getValue());
+                }
+                System.out.println("*****");
+            }
+        }
+        //System.out.println("printJobs is not implemented yet");
     }
 }
