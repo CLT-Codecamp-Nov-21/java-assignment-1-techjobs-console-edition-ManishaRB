@@ -124,7 +124,6 @@ public class TechJobs {
             return;
         } else {
             for (HashMap<String, String> jobResult : someJobs) {
-               // System.out.println("");
                 System.out.println("\n*****");
                 for (Map.Entry<String, String> jobData : jobResult.entrySet()) {
                     System.out.println(jobData.getKey() + ": " + jobData.getValue());
@@ -132,6 +131,5 @@ public class TechJobs {
                 System.out.println("*****");
             }
         }
-        //System.out.println("printJobs is not implemented yet");
     }
 }
